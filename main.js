@@ -115,9 +115,38 @@ case "ArrowDown":
 break 
  }
 squares[pacmanCurrentIndex].classList.add("pac-man")
-
+pacDotEaten()
+powerPelletEaten()
 
 
 }
     document.addEventListener('keyup',movePacman)
+
+    function pacDotEaten() {
+     if (squares[pacmanCurrentIndex].classList.contains("pac-dot")) {
+        score++
+        scoreDisplay.innerHTML = score
+        squares[pacmanCurrentIndex].classList.remove("pac-dot")
+     }
+}
+
+
+    function powerPelletEaten() {
+ if (squares[pacmanCurrentIndex].classList.contains("power-pellet")) {
+score += 10
+scoreDisplay.innerHTML = score
+ghosts.forEach(ghost=>ghost.isScared = true)
+setTimeout(unScaredGhosts, 10000)
+squares[pacmanCurrentIndex].classList.remove("power-pellet")
+ }
+    }
+
+    function unScaredGhosts() {
+
+    }
+
+
+
+
+
 })
