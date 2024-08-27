@@ -31,3 +31,19 @@
     background-color: yellow;
     border-radius: 10px;
 }
+
+.blinky {
+    background-color: red;
+}
+
+.pinky {
+    background-color: palevioletred;
+}
+
+.inky {
+    background-color: cyan;
+}
+
+.clyde {
+    background-color: greenyellow;
+}
