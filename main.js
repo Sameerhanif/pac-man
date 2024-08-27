@@ -117,7 +117,8 @@ break
 squares[pacmanCurrentIndex].classList.add("pac-man")
 pacDotEaten()
 powerPelletEaten()
-
+checkForGameOver()
+checkForWin()
 
 }
     document.addEventListener('keyup',movePacman)
@@ -197,6 +198,27 @@ squares[ghost.currentIndex].classlist.add(ghost.className, "ghost")
 
 }
 
+function checkForGameOver() {
+    if (
+        squares[pacmanCurrentIndex].classList.contains("ghost") &&
+        !squares[pacmanCurrentIndex].classList.contains("scared-ghost")) {
+        ghosts.forEach(ghost => clearInterval(ghost.timerId))
+        document.removeEventListener("keyup", movePacman)
+        setTimeout(function () {
+            alert("Game Over")
+        }, 500)
+     }
+}
+
+function checkForWin() {
+    if (score >= 274 ) {
+ghosts.forEach(ghost => clearInterval(ghost.timerId))
+document.removeEventListener("keyup", movePacman)
+setTimeout(function () {
+    alert("you won!")
+}, 500)
+    }
+}
 
 
 })
