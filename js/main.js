@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     const width = 28
     let score = 0 
     const grid = document.querySelector(".grid")
-    
+
     const layout = [
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
@@ -165,10 +165,18 @@ new Ghost("clyde", 469, 500),
 ]
 
 ghosts.forEach(ghost =>
-    squares[ghost.currentIndex].classList.add(ghost.className, "ghost"))
+    squares[ghost.currentIndex].classList.add(ghost.className, "ghost"))  
+    ghosts.forEach(ghost => moveGhost(ghost))
+    
+ 
 
-ghosts.forEach(ghost => moveGhost(ghost))
-    function moveGhost(ghost) {
+function moveGhost(ghost) {
+
+
+  
+
+
+
 const directions = [-1, 1, width, -width]
 let direction = directions[Math.floor(Math.random() * directions.length )]
 ghost.timerId = setInterval(function () {
@@ -192,11 +200,16 @@ ghost.currentIndex = ghost.startIndex
 score += 100
 scoreDisplay.innerHTML = score 
 squares[ghost.currentIndex].classlist.add(ghost.className, "ghost")
+
 }
 
 },ghost.speed)
 
 }
+
+
+
+
 
 function checkForGameOver() {
     if (
