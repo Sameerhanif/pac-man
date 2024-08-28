@@ -158,10 +158,10 @@ ghosts.forEach(ghost => ghost.isScared = false)
     }
 
 const ghosts = [
-new Ghost("blinky",348,250),
-new Ghost("pinky", 367, 400),
-new Ghost("inky", 351, 300),
-new Ghost("clyde", 379, 500),
+new Ghost("blinky",148,250),
+new Ghost("pinky", 258, 400),
+new Ghost("inky", 731, 300),
+new Ghost("clyde", 469, 500),
 ]
 
 ghosts.forEach(ghost =>
